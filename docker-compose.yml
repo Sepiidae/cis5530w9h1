@@ -1,0 +1,34 @@
+# Example docker-compose template to help students get started,
+# You must modify many items in this template to get it working
+# this just shows you the lines you must have in place. 
+# you can find help on the internet or assistance from your
+# previous homework assignments in this class. 
+services:
+  httpd:
+    image: someimage
+    volumes:
+      - somewhere:somewhere
+    ports:
+      - 22:22
+  mariadb:
+    image: someimage
+    ports:
+      - someportformysql:someportformysql
+    volumes:
+      - mariadb:/var/lib/mariadb
+  tomcat:
+    image: someimage
+    volumes: 
+      - somewhere:somewhere
+    ports:
+      - someportfortomcat:someportfortomcat
+  openldap:
+    image: someimage
+    ports:
+      - someportforldap:someportforldap
+# Instructor has been nice here. :-)
+    environment:
+      LDAP_ORGANISATION: cis5530
+      LDAP_DOMAIN: cis5530.local
+      LDAP_ADMIN_PASSWORD: cis5530
+
